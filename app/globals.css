@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-base: #050505;
+  --color-surface-mid: #121212;
+  --color-cyan-primary: #00B4D8;
+  --color-cyan-energy: #00E5FF;
+  --color-violet-start: #8A2BE2;
+  --color-violet-end: #7B2CBF;
+  --color-text-header: #FFFFFF;
+  --color-text-body: #B0B0C0;
+
+  --font-space: var(--font-space-grotesk);
+  --font-inter: var(--font-inter);
+  --font-fira: var(--font-fira-code);
+}
+
+:root {
+  --bg-base: #050505;
+  --surface-mid: #121212;
+  --cyan-primary: #00B4D8;
+  --cyan-energy: #00E5FF;
+  --violet-start: #8A2BE2;
+  --violet-end: #7B2CBF;
+  --text-header: #FFFFFF;
+  --text-body: #B0B0C0;
+  --gradient-orkesta: linear-gradient(135deg, #00E5FF, #7B2CBF);
+  --gradient-cyber: linear-gradient(90deg, #00B4D8, #00E5FF);
+  --glass-border: 1px solid rgba(0, 229, 255, 0.18);
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-header);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* === GLASS CARD === */
+.glass-card {
+  background: var(--surface-mid);
+  border: var(--glass-border);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+}
+
+/* === GRADIENT TEXT === */
+.gradient-text {
+  background: var(--gradient-orkesta);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === GLOW === */
+.glow-cyan {
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.25);
+}
+
+/* === CIRCUIT PATTERN === */
+.circuit-pattern {
+  background-image: radial-gradient(
+    rgba(0, 180, 216, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+}
+
+/* === PULSE GLOW ANIMATION === */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.45);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* === SELECTION === */
+::selection {
+  background: rgba(0, 229, 255, 0.25);
+  color: #fff;
+}
+
+/* === SMOOTH SCROLL === */
+html {
+  scroll-behavior: smooth;
+}
