@@ -1,5 +1,6 @@
 import { getSectorContent } from "@/lib/content";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { ProblemSection } from "@/components/sections/ProblemSection";
 
 export default async function Home({
   searchParams,
@@ -13,6 +14,7 @@ export default async function Home({
   return (
     <main className="bg-[var(--bg-base)] circuit-pattern min-h-screen overflow-x-hidden">
       <HeroSection content={content} />
+      <ProblemSection content={content} />
     </main>
   );
 }
